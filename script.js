@@ -1,9 +1,15 @@
-function beforeSubmit(){
+let captchachecked = false;
+function beforeSubmit(event){
+    if(captchachecked){
     let outputdate =document.querySelector(".outputdate");
     let inputdate=document.querySelector(".inputdate");
     console.log(inputdate.value);//its in string form --> date(en_IN)
     let formatteddate = new Date(inputdate.value).toLocaleDateString("en-IN");
     outputdate.value=formatteddate;
+ }else{
+    alert("Please check the re-CAPTCHA box to submit the lead");
+    event.preventDefault();
+ }
 }
 
 function timestamp() {
@@ -16,3 +22,6 @@ function timestamp() {
      }
   } 
   setInterval(timestamp, 500); 
+  function captchasuccess(){
+    captchachecked = true;
+  }
