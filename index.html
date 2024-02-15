@@ -6,12 +6,14 @@
     <title>Web To Lead Form</title>
     <link rel="stylesheet" href="index.css"/>
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
     <h1>Create Lead</h1>
     
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="beforeSubmit()">
     
+        <input type=hidden name='captcha_settings' value='{"keyname":"WebToLead","fallback":"true","orgId":"00D5j00000D9HQr","ts":""}'>   
     <input type=hidden name="oid" value="00D5j00000D9HQr"/>
     <input type=hidden name="retURL" value="https://mohamedaashiq08.github.io/Mini-Project/thanks.html"/>
     <input type=hidden name="Lead_Date__c" class="outputdate"/>
@@ -28,6 +30,7 @@
     <!--Lead Date:<span class="dateInput dateOnlyInput"><input  id="00N5j00000WaeLM" name="00N5j00000WaeLM" size="12" type="text" /></span><br>-->
     
     <input type="submit" name="submit" class="submit">
+    <div class="g-recaptcha" data-sitekey="6Lcen3MpAAAAAGMdwcB3SoBvqcDQJxDbOwWJZbJL"></div><br>
     
     </form>
 </body>
